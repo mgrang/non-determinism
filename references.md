@@ -3,7 +3,6 @@
 My work on uncovering non-determinism in LLVM
 has featured in the following places:
 
-```
 [1] https://bugs.swift.org/browse/SR-6154
 
 [2] https://blog.jetbrains.com/clion/2017/12/cpp-annotated-sep-dec-2017
@@ -29,4 +28,3 @@ has featured in the following places:
 [12] http://lists.llvm.org/pipermail/llvm-dev/2017-August/116975.html
 
 [13] http://lists.llvm.org/pipermail/llvm-dev/2017-October/118639.html
-```
