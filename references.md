@@ -1,7 +1,7 @@
 ## References
 
-My work on uncovering non-determinism in LLVM
-has featured in the following places:
+My work on uncovering non-determinism in LLVM has featured several times in the
+LLVM weekly newsletters and other places:
 
 [1]  https://bugs.swift.org/browse/SR-6154
 
@@ -9,22 +9,24 @@ has featured in the following places:
 
 [3]  http://bitupdate.us/compiler-infrastructure-llvm-5-0-provides-new-tools
 
-[4]  http://llvmweekly.org/issue/224
+[4] https://reproducible-builds.org/blog/posts/115
 
-[5]  http://llvmweekly.org/issue/201
+[5]  http://llvmweekly.org/issue/224
 
-[6]  http://llvmweekly.org/issue/193
+[6]  http://llvmweekly.org/issue/201
 
-[7]  http://llvmweekly.org/issue/192
+[7]  http://llvmweekly.org/issue/193
 
-[8]  http://llvmweekly.org/issue/184
+[8]  http://llvmweekly.org/issue/192
 
-[9]  http://llvmweekly.org/issue/151
+[9]  http://llvmweekly.org/issue/184
 
-[10] http://lists.llvm.org/pipermail/llvm-dev/2016-November/107098.html
+[10]  http://llvmweekly.org/issue/151
 
-[11] http://lists.llvm.org/pipermail/llvm-dev/2017-July/115025.html
+[11] http://lists.llvm.org/pipermail/llvm-dev/2016-November/107098.html
 
-[12] http://lists.llvm.org/pipermail/llvm-dev/2017-August/116975.html
+[12] http://lists.llvm.org/pipermail/llvm-dev/2017-July/115025.html
 
-[13] http://lists.llvm.org/pipermail/llvm-dev/2017-October/118639.html
+[13] http://lists.llvm.org/pipermail/llvm-dev/2017-August/116975.html
+
+[14] http://lists.llvm.org/pipermail/llvm-dev/2017-October/118639.html
