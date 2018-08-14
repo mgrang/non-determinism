@@ -51,6 +51,7 @@ iteration mode. This mode makes all supported containers iterate in reverse, by
 default. The idea is to compare the output of a reverse iteration compiler with
 that of a forward iteration compiler to weed out iteration order randomness.
 This mode is transparent to the user and comes with almost zero runtime cost.
+
 The following upstream buildbot tracks this mode:
 http://lab.llvm.org:8011/builders/reverse-iteration
 
@@ -58,7 +59,9 @@ http://lab.llvm.org:8011/builders/reverse-iteration
 We added a wrapper function to LLVM called llvm::sort which randomly shuffles a
 container before invoking std::sort. The idea is that randomly shuffling a
 container would weed out non-deterministic sorting order of keys with the same
-values. The following upstream buildbot tracks this mode:
+values.
+
+The following upstream buildbot tracks this mode:
 http://lab.llvm.org:8011/builders/llvm-clang-x86_64-expensive-checks-win
 
 We also outline some best practices we followed in LLVM to avoid or fix
