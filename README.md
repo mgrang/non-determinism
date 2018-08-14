@@ -39,7 +39,7 @@ non-deterministic behavior is often challenging since the compiler may not
 always behave in an expected way. In LLVM we try to uncover non-determinism in
 2 ways:
 
-1. Iteration order non-determinism
+### 1. Iteration order non-determinism
 We implemented a “reverse iteration” mode for all supported unordered
 containers in LLVM. The CMake flag LLVM_REVERSE_ITERATION enables the reverse
 iteration mode. This mode makes all supported containers iterate in reverse, by
@@ -49,7 +49,7 @@ This mode is transparent to the user and comes with almost zero runtime cost.
 The following upstream buildbot tracks this mode:
 http://lab.llvm.org:8011/builders/reverse-iteration
 
-2. Sorting order non-determinism
+### 2. Sorting order non-determinism
 We added a wrapper function to LLVM called llvm::sort which randomly shuffles a
 container before invoking std::sort. The idea is that randomly shuffling a
 container would weed out non-deterministic sorting order of keys with the same
@@ -74,6 +74,7 @@ added coding standards for LLVM compiler developers on the correct use of
 unordered containers and sorting algorithms:
 
 [1] https://llvm.org/docs/CodingStandards.html#beware-of-non-determinism-due-to-ordering-of-pointers
+
 [2] https://llvm.org/docs/CodingStandards.html#beware-of-non-deterministic-sorting-order-of-equal-elements
 
 ## REFERENCES
@@ -81,15 +82,27 @@ Our work has featured several times in the LLVM weekly newsletters and other
 places:
 
 [1] https://bugs.swift.org/browse/SR-6154
+
 [2] https://blog.jetbrains.com/clion/2017/12/cpp-annotated-sep-dec-2017
+
 [3] http://bitupdate.us/compiler-infrastructure-llvm-5-0-provides-new-tools
+
 [4] http://llvmweekly.org/issue/224
+
 [5] http://llvmweekly.org/issue/201
+
 [6] http://llvmweekly.org/issue/193
+
 [7] http://llvmweekly.org/issue/192
+
 [8] http://llvmweekly.org/issue/184
+
 [9] http://llvmweekly.org/issue/151
+
 [10] http://lists.llvm.org/pipermail/llvm-dev/2016-November/107098.html
+
 [11] http://lists.llvm.org/pipermail/llvm-dev/2017-July/115025.html
+
 [12] http://lists.llvm.org/pipermail/llvm-dev/2017-August/116975.html
+
 [13] http://lists.llvm.org/pipermail/llvm-dev/2017-October/118639.html
