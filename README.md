@@ -33,9 +33,11 @@ compiler can produce different object code for the same input.
 
 We have identified three main causes of non-deterministic behavior in a C++
 compiler:
-### 1. Iteration of unordered containers
-### 2. Hashing of pointer keys
-### 3. Use of non-stable sort functions
+1. Iteration of unordered containers
+
+2. Hashing of pointer keys
+
+3. Use of non-stable sort functions
 
 All three arise due to poor understanding of the behavior of various containers
 and algorithms.  The detection of such non-deterministic behavior is often
