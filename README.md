@@ -32,12 +32,15 @@ non-asserts version of the same compiler. Or even back-to-back runs of the same
 compiler can produce different object code for the same input.
 
 We have identified three main causes of non-deterministic behavior in a C++
-compiler: iteration of unordered containers, hashing of pointer keys, and the
-use of non-stable sort functions. All three arise due to poor understanding of
-the behavior of various containers and algorithms.  The detection of such
-non-deterministic behavior is often challenging since the compiler may not
-always behave in an expected way. In LLVM we try to uncover non-determinism in
-2 ways:
+compiler:
+### 1. Iteration of unordered containers
+### 2. Hashing of pointer keys
+### 3. Use of non-stable sort functions
+
+All three arise due to poor understanding of the behavior of various containers
+and algorithms.  The detection of such non-deterministic behavior is often
+challenging since the compiler may not always behave in an expected way. In
+LLVM we try to uncover non-determinism in 2 ways:
 
 ### 1. Iteration order non-determinism
 We implemented a “reverse iteration” mode for all supported unordered
