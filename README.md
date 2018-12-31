@@ -91,6 +91,7 @@ https://github.com/CppCon/CppCon2018/tree/master/Posters/fighting_nondeterminism
 
 [2] Non-determinism in LLVM Code Generation (LLVM Developers' Meeting 2017, San Jose, CA)
 http://llvm.org/devmtg/2017-10/#poster11
+
 https://github.com/mgrang/non-determinism/blob/master/poster__nondeterminism_in_llvm_code_generation__llvmdevmeet_2017.pdf
 
 ## NEXT STEPS
