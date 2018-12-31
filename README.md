@@ -83,6 +83,16 @@ containers and sorting algorithms:
 
 [2] https://llvm.org/docs/CodingStandards.html#beware-of-non-deterministic-sorting-order-of-equal-elements
 
+## PRESENTATIONS
+I have presented my work at the following conferences:
+
+[1] Fighting Non-determinism in C++ Compilers (CppCon 2018, Bellevue, WA)
+https://github.com/CppCon/CppCon2018/tree/master/Posters/fighting_nondeterminism_in_cpp_compilers
+
+[2] Non-determinism in LLVM Code Generation (LLVM Developers' Meeting 2017, San Jose, CA)
+http://llvm.org/devmtg/2017-10/#poster11
+https://github.com/mgrang/non-determinism/blob/master/poster__nondeterminism_in_llvm_code_generation__llvmdevmeet_2017.pdf
+
 ## NEXT STEPS
 The next logical step would be to apply the ideas presented here in a more
 wider context to help find non-determinism in user code. With that in mind, I
