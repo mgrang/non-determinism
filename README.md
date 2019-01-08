@@ -138,3 +138,9 @@ places:
 [12] http://lists.llvm.org/pipermail/llvm-dev/2017-August/116975.html
 
 [13] http://lists.llvm.org/pipermail/llvm-dev/2017-October/118639.html
+
+## UPDATES
+
+01/08/2019: The entire LLDB codebase has now switched to llvm::sort instead of std::sort.
+            See https://reviews.llvm.org/rLLDB350679
+
