@@ -94,16 +94,15 @@ https://github.com/mgrang/non-determinism/blob/master/poster__nondeterminism_in_
 http://llvm.org/devmtg/2017-10/#poster11
 
 
-## NEXT STEPS
+## NEXT STEPS - STATIC CHECKERS
 The next logical step would be to apply the ideas presented here in a more
 wider context to help find non-determinism in user code. With that in mind, I
-have started writing a Clang Static Analyzer checker to detect instances of
+have written a Clang Static Analyzer checker to detect instances of
 non-determinism caused by sorting pointer-like keys.
 
 The beauty of the analyzer checks is that they run at compile time and hence
 are cheap to test. The drawback is that there may be some false positives which
-need to be pruned with better heuristics.  Here is the RFC and the patch (WIP)
-for this:
+need to be pruned with better heuristics.  Here is the RFC and the patch:
 
 [1] http://lists.llvm.org/pipermail/llvm-dev/2018-August/125191.html
 
