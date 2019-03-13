@@ -111,7 +111,7 @@ Refer:
 
 [2] https://clang.llvm.org/docs/analyzer/checkers.html#alpha-nondeterminism-pointersorting-c
 
-### Pointer Sorting Checker
+### 1. Pointer Sorting Checker
   Checks for non-determinism caused by sorting of pointers.
 
 ```
@@ -123,7 +123,7 @@ void test() {
 ```
 Refer: https://reviews.llvm.org/D50488
 
-### Pointer Iteration Checker
+### 2. Pointer Iteration Checker
   Checks for non-determinism caused by iterating unordered containers of pointers.
 
 ```
@@ -137,7 +137,7 @@ void test() {
 ```
 Refer: https://reviews.llvm.org/D59279
 
-### Pointer Hashing Checker
+### 3. Pointer Hashing Checker
   Checks for non-determinism caused by using pointers as keys of a hashmap.
 
 ```
