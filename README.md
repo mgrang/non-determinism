@@ -10,6 +10,7 @@ non-deterministic behavior in the **LLVM C++ Compiler**. Finally, I report on
 the impact that my work has had on the LLVM community, the total number of bugs
 found and how I fixed them.
 
+
 ## RELEVANCE
 Millions of C++ developers around the world use compilers to develop their
 programs. Not every developer necessarily understands the internals of the
@@ -20,6 +21,7 @@ non-determinism can make debugging difficult, result in hard-to-reproduce bugs,
 cause unexpected runtime crashes or unpredictable performance.  My work
 attempts to uncover non-deterministic behavior in the LLVM compiler thereby
 making LLVM more robust.
+
 
 ## DISCUSSION
 A C++ compiler may exhibit non-deterministic behavior. This means that for the
@@ -69,6 +71,7 @@ non-deterministic behavior are:
 3. Use a stable sort function
 4. Use an ordered container
 
+
 ## COMPLETION STATUS
 My work to enable reverse iteration and random shuffling a container is
 complete and available upstream in the latest 6.0 release of LLVM. I have so
@@ -82,6 +85,7 @@ containers and sorting algorithms:
 [1] https://llvm.org/docs/CodingStandards.html#beware-of-non-determinism-due-to-ordering-of-pointers
 
 [2] https://llvm.org/docs/CodingStandards.html#beware-of-non-deterministic-sorting-order-of-equal-elements
+
 
 ## PRESENTATIONS
 I have presented my work at the following conferences:
@@ -105,8 +109,6 @@ The beauty of the analyzer checks is that they run at compile time and hence
 are cheap to test. The drawback is that there may be some false positives which
 need to be pruned with better heuristics.
 
-Refer:
-
 [1] http://lists.llvm.org/pipermail/llvm-dev/2018-August/125191.html
 
 [2] https://clang.llvm.org/docs/analyzer/checkers.html#alpha-nondeterminism-pointersorting-c
@@ -121,7 +123,7 @@ void test() {
   std::sort(PtrVec.begin(), PtrVec.end()); // warn
 }
 ```
-Refer: https://reviews.llvm.org/D50488
+See https://reviews.llvm.org/D50488
 
 ### 2. Pointer Iteration Checker
   Checks for non-determinism caused by iterating unordered containers of pointers.
@@ -135,7 +137,7 @@ void test() {
     do(i);
 }
 ```
-Refer: https://reviews.llvm.org/D59279
+See https://reviews.llvm.org/D59279
 
 ### 3. Pointer Hashing Checker
   Checks for non-determinism caused by using pointers as keys of a hashmap.
@@ -146,7 +148,6 @@ void test() {
   std::map<int *> Map; // warn
 }
 ```
-Refer: WIP
 
 
 ## REFERENCES
@@ -179,7 +180,7 @@ places:
 
 [13] http://lists.llvm.org/pipermail/llvm-dev/2017-October/118639.html
 
+
 ## UPDATES
 
-01/08/2019: The entire LLDB codebase has now switched to llvm::sort instead of std::sort.
-            See https://reviews.llvm.org/rLLDB350679
+01/08/2019: The entire LLDB codebase has now switched to llvm::sort instead of std::sort. See https://reviews.llvm.org/rLLDB350679
