@@ -94,19 +94,55 @@ https://github.com/mgrang/non-determinism/blob/master/poster__nondeterminism_in_
 http://llvm.org/devmtg/2017-10/#poster11
 
 
-## NEXT STEPS - STATIC CHECKERS
-The next logical step would be to apply the ideas presented here in a more
+## NEXT STEP - STATIC CHECKERS
+The next logical step is to apply the ideas presented here in a more
 wider context to help find non-determinism in user code. With that in mind, I
-have written a Clang Static Analyzer checker to detect instances of
-non-determinism caused by sorting pointer-like keys.
+have written several Clang Static Analyzer checkers to detect instances of
+non-determinism. I have introduced a new category for non-determinism in the
+Clang Static Analyzer and added my checks under this category.
 
 The beauty of the analyzer checks is that they run at compile time and hence
 are cheap to test. The drawback is that there may be some false positives which
-need to be pruned with better heuristics.  Here is the RFC and the patch:
+need to be pruned with better heuristics.
 
+Refer:
 [1] http://lists.llvm.org/pipermail/llvm-dev/2018-August/125191.html
+[2] https://clang.llvm.org/docs/analyzer/checkers.html#alpha-nondeterminism-pointersorting-c
 
-[2] https://reviews.llvm.org/D50488
+1. Pointer Sorting Checker: Checks for non-determinism caused by sorting of pointers.
+
+```
+void test() {
+  int a = 1, b = 2;
+  std::vector<int *> PtrVec = {&a, &b};
+  std::sort(PtrVec.begin(), PtrVec.end()); // warn
+}
+```
+Refer: https://reviews.llvm.org/D50488
+
+2. Pointer Iteration Checker: Checks for non-determinism caused by iterating unordered containers of pointers.
+
+```
+void test() {
+  int a = 1, b = 2;
+  std::unordered_set<int *> UnorderedPtrSet = {&a, &b};
+
+  for (auto i : UnorderedPtrSet) // warn
+    do(i);
+}
+```
+Refer: https://reviews.llvm.org/D59279
+
+3. Pointer Hashing Checker: Checks for non-determinism caused by using pointers as keys of a hashmap.
+
+```
+void test() {
+  int a = 1, b = 2;
+  std::map<int *> Map; // warn
+}
+```
+Refer: WIP
+
 
 ## REFERENCES
 My work has featured several times in the LLVM weekly newsletters and other
@@ -142,4 +178,3 @@ places:
 
 01/08/2019: The entire LLDB codebase has now switched to llvm::sort instead of std::sort.
             See https://reviews.llvm.org/rLLDB350679
-
