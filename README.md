@@ -106,10 +106,13 @@ are cheap to test. The drawback is that there may be some false positives which
 need to be pruned with better heuristics.
 
 Refer:
+
 [1] http://lists.llvm.org/pipermail/llvm-dev/2018-August/125191.html
+
 [2] https://clang.llvm.org/docs/analyzer/checkers.html#alpha-nondeterminism-pointersorting-c
 
-1. Pointer Sorting Checker: Checks for non-determinism caused by sorting of pointers.
+### Pointer Sorting Checker
+  Checks for non-determinism caused by sorting of pointers.
 
 ```
 void test() {
@@ -120,7 +123,8 @@ void test() {
 ```
 Refer: https://reviews.llvm.org/D50488
 
-2. Pointer Iteration Checker: Checks for non-determinism caused by iterating unordered containers of pointers.
+### Pointer Iteration Checker
+  Checks for non-determinism caused by iterating unordered containers of pointers.
 
 ```
 void test() {
@@ -133,7 +137,8 @@ void test() {
 ```
 Refer: https://reviews.llvm.org/D59279
 
-3. Pointer Hashing Checker: Checks for non-determinism caused by using pointers as keys of a hashmap.
+### Pointer Hashing Checker
+  Checks for non-determinism caused by using pointers as keys of a hashmap.
 
 ```
 void test() {
